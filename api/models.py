@@ -13,7 +13,6 @@ def generate_unique_code():
     while True:
         # Creates a code with length k using only upper case ascii letters
         code = ''.join(random.choices(string.ascii_uppercase, k=length))
-
         # Calculates the number of Room models that contain the generated code
         if Room.objects.filter(code=code).count == 0:
             break
